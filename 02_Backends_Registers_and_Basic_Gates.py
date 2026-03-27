@@ -1,4 +1,24 @@
-from qiskit import *
+"""
+This script demonstrates basic quantum circuit construction and simulation in Qiskit.
+
+The first section builds a 2-qubit circuit, applies an X gate and a Hadamard gate,
+and inspects the resulting statevector. It also highlights Qiskit’s convention of
+reversing qubit order before analyzing amplitudes. The circuit is then
+measured and executed on a simulator to obtain sample measurement outcomes.
+
+The second section generalizes to an n-qubit system (n=4), where Hadamard gates are
+applied to all qubits to produce a uniform superposition over all computational basis
+states. Measurement results from a high-shot simulation are collected and visualized,
+confirming the expected uniform distribution.
+"""
+
+
+from qiskit import QuantumRegister, ClassicalRegister, QuantumCircuit
+from qiskit_aer import Aer, QasmSimulator
+from qiskit.quantum_info import Statevector
+from qiskit.visualization import plot_histogram
+import matplotlib.pyplot as plt
+
 qr = QuantumRegister(2,'q')
 cr = ClassicalRegister(2, 'c')
 qc = QuantumCircuit(qr,cr)
@@ -37,13 +57,6 @@ from qiskit.providers.basic_provider import BasicSimulator
 backend = BasicSimulator()
 result = backend.run(qc.reverse_bits(), shots=100).result()
 counts = result.get_counts()
-
-
-from qiskit import *
-from qiskit.quantum_info import Statevector
-from qiskit.providers.aer import Aer, QasmSimulator
-from qiskit.visualization import plot_histogram
-import matplotlib.pyplot as plt
 
 # Initialize 4-qubit quantum register and 4-bit classical register
 n = 4
