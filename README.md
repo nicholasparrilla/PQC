@@ -247,7 +247,3 @@ NIST ran a multi-year PQC standardization process (2016–2024):
 - [Open Quantum Safe (liboqs)](https://openquantumsafe.org/) — open-source PQC implementations
 - [PQCRYPTO Project](https://pqcrypto.eu.org/)
 - [NSA CNSA 2.0 Suite](https://www.nsa.gov/Cybersecurity/Post-Quantum-Cybersecurity-Resources/)
-
----
-
-*Last updated: 2024. The PQC landscape evolves rapidly — always consult the latest NIST publications for guidance.*
